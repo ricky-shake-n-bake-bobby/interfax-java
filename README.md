@@ -1,6 +1,6 @@
 # InterFAX Java Library
 
-[![Build Status](https://travis-ci.org/interfax/interfax-java.svg?branch=master)](https://travis-ci.org/interfax/interfax-java) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.interfax/api-client/badge.svg)](https://maven-badges.herokuapp.com/maven-central/net.interfax/api-client)
+[![Build Status](https://travis-ci.org/ricky-shake-n-bake-bobby/interfax-java.svg?branch=master)](https://travis-ci.org/ricky-shake-n-bake-bobby/interfax-java) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.interfax/api-client/badge.svg)](https://maven-badges.herokuapp.com/maven-central/net.interfax/api-client)
 
 [Installation](#installation) | [Getting Started](#getting-started) | [Usage](#usage) | [Contributing](#contributing) | [License](#license)
 
