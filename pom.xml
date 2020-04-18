@@ -4,7 +4,7 @@
 
     <groupId>net.interfax</groupId>
     <artifactId>api-client</artifactId>
-    <version>0.16</version>
+    <version>0.16-SNAPSHOT</version>
 
     <name>InterFAX Java Client</name>
     <description>Library that enables using InterFAX HTTP APIs using Java</description>
@@ -47,7 +47,7 @@
     <properties>
         <maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
         <maven-source-plugin.version>2.4</maven-source-plugin.version>
-        <nexus-staging-maven-plugin.version>1.6.3</nexus-staging-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
     </properties>
 
@@ -125,6 +125,18 @@
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.8</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-release-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>3.0.0-M1</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -142,7 +154,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
+                <version>3.0.0-M1</version>
                 <configuration>
                     <scmCommentPrefix>[ci skip]</scmCommentPrefix>
                 </configuration>
