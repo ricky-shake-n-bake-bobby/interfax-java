@@ -5,8 +5,8 @@ sudo: false
 after_success:
 - echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USER}</username><password>\${env.OSSRH_PASS}</password></server></servers></settings>"
   > ~/settings.xml
-- openssl aes-256-cbc -K $encrypted_6afd0fc9428e_key -iv $encrypted_6afd0fc9428e_iv -in scripts/keys/secring.gpg.enc -out $GPG_DIR//secring.gpg -d
-- openssl aes-256-cbc -K $encrypted_7c6b24e34caf_key -iv $encrypted_7c6b24e34caf_iv -in scripts/keys/pubring.gpg.enc -out $GPG_DIR//pubring.gpg -d
+- openssl aes-256-cbc -K $encrypted_6afd0fc9428e_key -iv $encrypted_6afd0fc9428e_iv -in scripts/keys/secring.gpg.enc -out $GPG_DIR/secring.gpg -d
+- openssl aes-256-cbc -K $encrypted_7c6b24e34caf_key -iv $encrypted_7c6b24e34caf_iv -in scripts/keys/pubring.gpg.enc -out $GPG_DIR/pubring.gpg -d
 - openssl aes-256-cbc -K $encrypted_dfdcfd5172af_key -iv $encrypted_dfdcfd5172af_iv -in scripts/keys/deploy_key.enc -out ~/deploy_key -d
 - git config --global user.email "interfaxus-support@uplandsoftware.com"
 - git config --global user.name "Ricky-Shake-n-Bake-Bobby"
