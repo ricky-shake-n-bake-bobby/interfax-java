@@ -9,7 +9,7 @@ after_success:
 - openssl aes-256-cbc -K $encrypted_7c6b24e34caf_key -iv $encrypted_7c6b24e34caf_iv -in scripts/keys/pubring.gpg.enc -out ~/pubring.gpg -d
 - openssl aes-256-cbc -K $encrypted_dfdcfd5172af_key -iv $encrypted_dfdcfd5172af_iv -in scripts/keys/deploy_key.enc -out ~/deploy_key -d
 - git config --global user.email "interfaxus-support@uplandsoftware.com"
-- git config --global user.name "Ricky-Shake-n-Bake-Bobby"
+- git config --global user.name "ricky-shake-n-bake-bobby"
 - git config --global user.signingkey 06D6565A343BD650
 - eval "$(ssh-agent -s)"
 - chmod 600 ~/deploy_key
@@ -17,6 +17,7 @@ after_success:
 after_script: scripts/release.sh
 env:
   global:
+    GPG_DIR="`pwd`~/"
     secure: Q5l0dzrwebogA/NDmkQDWgBi75mmJqkqLts6sVDR7JlTeuN/GQ0HXMwhIXNgqyNEAUqKH+sj6aKX+NFJr6gN1BSHFEczhYzOpOVGggURvdW7jf7hGFeiMSdkzqCf1dyJRlAFN+3aU08v3CXKVJiZo3SgDddZfsPagz9N7HDtfMzuLkQqgpkAuaNgEgcH2Z8j88eBbCClfFTMjYM0f2jznp1PAt1k3yJf06+k0xdnADXIQb7v4xF8+NmSCzjD76WCEMylGU7RYUXvlgxrI80OLIZwGSR0oWrBr3seTD+Q55RS4mVe3yzN+bFHfwi2GnsQ9S11cbST0QwV7w5PoRE0RbAXRqrEELAAqXdxaooOilibLvpS2XGEo1ZuF1Pf1bLHekCl27BvU1LsaypLs5a3LwKMfQ3WaOWtGsHC1f4OgkwoUhN1/tfqTvUZ8erSH4u+9RS4MR4nWrGhPIUpJsRBfYhwJRLoLs0PX+em8hzIgPpxBYpnQ4R68xc5noTdT6Z1TequB6fvdNhEnZWhKWoxUQnxgVahsHuJKawqwxGdJXckCGEvvVr1+EOcvezOzDb4gW2b1l+NIFj72HlvGAwnWMU66nVn6zi6H0kZcq+/rCPk/1ms/U80UTTG2jSkoOGbcg9dy0Aq/m7vcsspkgPEYfgRrusB6auMNXn5yA7lfks=
     secure: k882XWrCWtQKgwxDRtKCpVaa/85j4bflwoGIoT2/0zWJq7+dhFmGaluP5X2ZO7o9Q6pX9wiysYy9NlMXpFnNig3qnfAGhxLcNgq8qjDppBv4C9duMmZZ/m7aVoIVRV2rULgwOx9NOd0zwDSIeGx1xPqjf/RaIfYKgRtlxP4D92Qf/FTdARyDoxkb0iF5jb3Urqd6BJOfzRNxX2y7MADEhuWtAYJ6YLESdbsrM3wn4jxnl0Aq4sOHvYSqCmAn/kqb3nGw3d22IyqdGremti+AeTkHk1eloFnF1NKvWxeAmo/8VnXZX4fJQazdpuM7j8RMMKsEVwPCG4h11hU+X2+TWYiCNq8QiKGTp49q5qxAFrsYIHO8SqDWzMl2Hl29aXn6PpZY/NkzZTFXhBPDsIjPN/Q6wsj6aT+W93N4nQ9oXQDhRSiuOZTenrGlCwDE6GUAukdqZPbyqReX/A9plVZ+7vgAaxqQnCQ1ZHhkCeImHebzn+v3Svuvn4jyeIRvCeQIlsl8SBoxsO/EgxxB+MDxk+5prPfsUwe0Jv5KfnJ/XUeBKBXyn9F2/nBYEmTtAZNdCC2RVdOUZJXtqPsu4zZG1AGIFnvXISA07LH81EgoffVjWcPoSyhJw0GK2FiAM3XOZoPwX/44HOMbZ0z15XSRyMVxkSpoLjC6Dp/2wTxvrqU=
     secure: QbYPpAPCbA0ppOnfxPc1+zy8sjQEqgB3MpUP8PhuGnlmyChVJW22ED20c8Zo5acjFfX4d9OZg+/tSdRWx9SG+gw/+zwU00hGyC/KCRXgKWj558RdBzVOM3Lnvyc97ZgeKn4/PYVuuQcIXcwEncSudW23TECYdLKj+ziMi0reNnKX1Tl5wOCs/yj1vfrbPe4lO6u1YIUrqCHZAwXe2n+lgkDE0jSZqvLKt55PkPFSm9vRl8FhmZH/Enn+HrdsQi16v/kOo06128VjkWsvdjd/ZMrwPRMOxjYLrJ9qL7nAHyFlShH3KgMkopPHJ2njs2k6FANPbZJMhZ4cdyXU9IBKuCMozttA9NI+7R8NdT15oygoWGGWiiRfJZZ+YszNsV7ZQx0evIgl+VS102THQxlDLV8ad/Sxv7sMR+5D58y1K4SVvwSA/b5Gw3WGHo66CyIZmMNOK7wgaQTydMrrVXTBD17IvRV5n6fAFqKxOQVIxQ9UUzLArnm1SpQ3nl4raKfH1gzulLHwMxO/h7cAehYVE68Xhhn7OGzdy1GDJoNbI/c/mW4PGK7RfKUbDG8qV44iXrvFnhWRdlEo1uYFmaJXhgJVLpHGd/fDwBhLJDGEGdhkRWLqrzp4zePn3t27l5vAKyIqrdIshg85xo03VLOR7HzCDyPbl6AMcdB31fLIntE=
