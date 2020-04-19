@@ -8,13 +8,12 @@ after_success:
 - openssl aes-256-cbc -K $encrypted_6afd0fc9428e_key -iv $encrypted_6afd0fc9428e_iv -in scripts/keys/secring.gpg.enc -out ~/secring.gpg -d
 - openssl aes-256-cbc -K $encrypted_7c6b24e34caf_key -iv $encrypted_7c6b24e34caf_iv -in scripts/keys/pubring.gpg.enc -out ~/pubring.gpg -d
 - openssl aes-256-cbc -K $encrypted_dfdcfd5172af_key -iv $encrypted_dfdcfd5172af_iv -in scripts/keys/deploy_key.enc -out ~/deploy_key -d
-- git config --global user.email "travis@interfax.net"
-- git config --global user.name "Travis Release"
+- git config --global user.email "interfaxus-support@uplandsoftware.com"
+- git config --global user.name "Ricky-Shake-n-Bake-Bobby"
 - eval "$(ssh-agent -s)"
 - chmod 600 ~/deploy_key
 - ssh-add ~/deploy_key
 after_script: scripts/release.sh
 env:
   global:
-    GPG_DIR="`pwd`~/"
     secure: Q5l0dzrwebogA/NDmkQDWgBi75mmJqkqLts6sVDR7JlTeuN/GQ0HXMwhIXNgqyNEAUqKH+sj6aKX+NFJr6gN1BSHFEczhYzOpOVGggURvdW7jf7hGFeiMSdkzqCf1dyJRlAFN+3aU08v3CXKVJiZo3SgDddZfsPagz9N7HDtfMzuLkQqgpkAuaNgEgcH2Z8j88eBbCClfFTMjYM0f2jznp1PAt1k3yJf06+k0xdnADXIQb7v4xF8+NmSCzjD76WCEMylGU7RYUXvlgxrI80OLIZwGSR0oWrBr3seTD+Q55RS4mVe3yzN+bFHfwi2GnsQ9S11cbST0QwV7w5PoRE0RbAXRqrEELAAqXdxaooOilibLvpS2XGEo1ZuF1Pf1bLHekCl27BvU1LsaypLs5a3LwKMfQ3WaOWtGsHC1f4OgkwoUhN1/tfqTvUZ8erSH4u+9RS4MR4nWrGhPIUpJsRBfYhwJRLoLs0PX+em8hzIgPpxBYpnQ4R68xc5noTdT6Z1TequB6fvdNhEnZWhKWoxUQnxgVahsHuJKawqwxGdJXckCGEvvVr1+EOcvezOzDb4gW2b1l+NIFj72HlvGAwnWMU66nVn6zi6H0kZcq+/rCPk/1ms/U80UTTG2jSkoOGbcg9dy0Aq/m7vcsspkgPEYfgRrusB6auMNXn5yA7lfks=
